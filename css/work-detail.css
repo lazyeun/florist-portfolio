@@ -1,0 +1,1138 @@
+/* ==================================================
+   WORK DETAIL — SHARED TEMPLATE
+   모든 상세페이지에서 공통으로 사용
+   main.css 다음에 로드
+================================================== */
+
+.project-page {
+  overflow: hidden;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.project-hero {
+  padding: 90px 0 0;
+}
+
+.project-kicker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+
+  color: var(--sub);
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .16em;
+}
+
+.project-kicker span {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-style: italic;
+  letter-spacing: normal;
+}
+
+.project-title-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+
+  gap: 70px;
+
+  margin-top: 62px;
+  margin-bottom: 88px;
+}
+
+.project-title {
+  font-family: var(--serif);
+  font-size: clamp(78px, 8.8vw, 138px);
+  font-weight: 400;
+
+  line-height: .78;
+  letter-spacing: -.055em;
+}
+
+.project-title span {
+  font-style: italic;
+}
+
+.project-title-side {
+  min-width: 180px;
+  padding-bottom: 8px;
+  text-align: right;
+}
+
+.project-title-side p {
+  color: var(--sub);
+
+  font-family: var(--jp);
+  font-size: 12px;
+  font-weight: 300;
+
+  line-height: 1.9;
+  letter-spacing: .08em;
+}
+
+.project-title-side span {
+  display: block;
+  margin-top: 18px;
+
+  color: var(--sub);
+
+  font-family: var(--serif);
+  font-size: 14px;
+  font-style: italic;
+}
+
+.project-main-image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.project-main-image img {
+  width: 100%;
+  height: min(74vw, 850px);
+
+  object-fit: cover;
+  object-position: var(--hero-position, center center);
+}
+
+
+/* ========================================
+   OVERVIEW
+======================================== */
+
+.project-overview {
+  padding: 135px 0 160px;
+}
+
+.project-overview-grid {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 720px);
+
+  justify-content: space-between;
+
+  gap: 100px;
+}
+
+.project-meta {
+  align-self: start;
+  border-top: 1px solid var(--line);
+}
+
+.project-meta > div {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.project-meta span,
+.project-label,
+.reflection-next span {
+  display: block;
+  margin-bottom: 9px;
+
+  color: var(--sub);
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .15em;
+}
+
+.project-meta p {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.project-intro h2 {
+  margin-top: 20px;
+
+  font-family: var(--serif);
+  font-size: clamp(52px, 5.4vw, 80px);
+  font-weight: 400;
+
+  line-height: .9;
+  letter-spacing: -.035em;
+}
+
+.project-copy {
+  max-width: 620px;
+
+  margin-top: 55px;
+
+  font-size: 14px;
+  line-height: 2.1;
+}
+
+.project-copy > p + p {
+  margin-top: 28px;
+}
+
+
+/* ========================================
+   JAPANESE COPY
+======================================== */
+
+.section-jp-copy {
+  margin-top: 42px;
+  padding-top: 25px;
+
+  border-top: 1px solid var(--line);
+}
+
+.section-jp-copy > span {
+  display: block;
+  margin-bottom: 14px;
+
+  color: var(--sub);
+
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .14em;
+}
+
+.section-jp-copy > p {
+  color: var(--sub);
+
+  font-family: var(--jp);
+  font-size: 12px;
+  font-weight: 300;
+
+  line-height: 2.15;
+}
+
+.section-jp-copy--compact {
+  margin-top: 34px;
+}
+
+
+/* ========================================
+   COMMON SECTION
+======================================== */
+
+.project-section {
+  padding: 145px 0;
+}
+
+.project-section-heading {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 42px;
+
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--line);
+}
+
+.project-section-number {
+  padding-top: 5px;
+
+  font-family: var(--serif);
+  font-size: 19px;
+  font-style: italic;
+}
+
+.project-section-heading h2 {
+  font-family: var(--serif);
+  font-size: clamp(58px, 5.7vw, 82px);
+  font-weight: 400;
+
+  line-height: .82;
+  letter-spacing: -.035em;
+}
+
+.project-section-heading p {
+  margin-top: 13px;
+
+  color: var(--sub);
+
+  font-family: var(--jp);
+  font-size: 11px;
+  font-weight: 300;
+
+  line-height: 1.8;
+  letter-spacing: .1em;
+}
+
+
+/* ========================================
+   COLOR PALETTE
+   작품별 색상은 HTML의 --swatch 값만 변경
+======================================== */
+
+.palette-section {
+  background: var(--bg-soft);
+}
+
+.palette-layout {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+
+  gap: 110px;
+
+  margin-top: 80px;
+}
+
+.palette-statement {
+  font-family: var(--serif);
+  font-size: clamp(48px, 4.8vw, 72px);
+
+  line-height: .88;
+  letter-spacing: -.035em;
+}
+
+.palette-copy {
+  max-width: 500px;
+
+  margin-top: 42px;
+
+  font-size: 14px;
+  line-height: 2.1;
+}
+
+.palette-swatches {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(72px, 1fr)
+  );
+
+  gap: 12px;
+
+  align-self: end;
+}
+
+.palette-item {
+  min-width: 0;
+}
+
+.palette-color {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 1 / 1.25;
+
+  background: var(--swatch, #d8d2c8);
+
+  border: 1px solid rgba(37, 36, 31, .08);
+}
+
+.palette-item > div {
+  margin-top: 14px;
+}
+
+.palette-item p {
+  font-size: 9px;
+  font-weight: 500;
+
+  line-height: 1.4;
+  letter-spacing: .12em;
+}
+
+.palette-item small {
+  display: block;
+  margin-top: 4px;
+
+  color: var(--sub);
+
+  font-family: var(--serif);
+  font-size: 12px;
+  font-style: italic;
+}
+
+
+/* ========================================
+   MATERIALS
+======================================== */
+
+.materials-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.materials-intro > p:first-child {
+  font-size: 14px;
+  line-height: 2.1;
+}
+
+.materials-intro > p:last-child {
+  color: var(--sub);
+
+  font-family: var(--jp);
+  font-size: 12px;
+  font-weight: 300;
+
+  line-height: 2.15;
+}
+
+.materials-list {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr 1fr;
+
+  gap: 70px;
+}
+
+.materials-column,
+.materials-note {
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.materials-column > span,
+.materials-note > span {
+  display: block;
+  margin-bottom: 25px;
+
+  color: var(--sub);
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .15em;
+}
+
+.material-name {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(210, 205, 196, .7);
+}
+
+.material-name:first-of-type {
+  padding-top: 0;
+}
+
+.material-name .kr {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.material-name .jp {
+  margin-top: 4px;
+
+  color: var(--sub);
+
+  font-family: var(--jp);
+  font-size: 11px;
+  font-weight: 300;
+
+  line-height: 1.6;
+}
+
+.materials-note > p {
+  max-width: 310px;
+
+  font-family: var(--serif);
+  font-size: 25px;
+
+  line-height: 1.25;
+}
+
+.materials-note-jp {
+  margin-top: 25px;
+
+  color: var(--sub);
+
+  font-family: var(--jp) !important;
+  font-size: 11px !important;
+  font-weight: 300;
+
+  line-height: 2 !important;
+}
+
+
+/* ========================================
+   COMPOSITION
+======================================== */
+
+.composition-grid {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+
+  gap: 120px;
+
+  margin-top: 95px;
+}
+
+.composition-statement p {
+  font-family: var(--serif);
+  font-size: clamp(62px, 6.6vw, 98px);
+
+  line-height: .8;
+  letter-spacing: -.045em;
+}
+
+.composition-copy {
+  max-width: 560px;
+
+  padding-top: 8px;
+
+  font-size: 14px;
+  line-height: 2.15;
+}
+
+.composition-copy > p + p {
+  margin-top: 28px;
+}
+
+
+/* ========================================
+   FINAL VIEW
+======================================== */
+
+.final-view-section {
+  background: var(--bg-soft);
+}
+
+.final-view-image {
+  margin-top: 80px;
+  overflow: hidden;
+}
+
+.final-view-image img {
+  width: 100%;
+  max-height: 900px;
+
+  object-fit: cover;
+  object-position: var(--final-position, center center);
+}
+
+.final-view-caption {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 70px;
+
+  margin-top: 24px;
+  padding-top: 22px;
+
+  border-top: 1px solid var(--line);
+}
+
+.final-view-caption span {
+  display: block;
+  margin-bottom: 12px;
+
+  color: var(--sub);
+
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .14em;
+}
+
+.final-view-caption p {
+  color: var(--sub);
+
+  font-size: 11px;
+  line-height: 1.95;
+}
+
+.final-view-caption > div:last-child p {
+  font-family: var(--jp);
+}
+
+
+/* ========================================
+   REFLECTION
+======================================== */
+
+.reflection-grid {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+
+  gap: 120px;
+
+  margin-top: 100px;
+}
+
+.reflection-statement p {
+  font-family: var(--serif);
+  font-size: clamp(58px, 6.3vw, 92px);
+
+  line-height: .82;
+  letter-spacing: -.04em;
+}
+
+.reflection-copy {
+  max-width: 570px;
+
+  font-size: 14px;
+  line-height: 2.15;
+}
+
+.reflection-copy > p + p {
+  margin-top: 30px;
+}
+
+.reflection-next {
+  margin-top: 62px;
+  padding-top: 25px;
+
+  border-top: 1px solid var(--line);
+}
+
+.reflection-next p {
+  font-size: 15px;
+  line-height: 2;
+}
+
+.reflection-next-jp {
+  margin-top: 13px;
+
+  color: var(--sub);
+
+  font-family: var(--jp);
+  font-size: 11px !important;
+  font-weight: 300;
+
+  line-height: 1.9 !important;
+}
+
+
+/* ========================================
+   PROJECT NAV
+======================================== */
+
+.project-nav {
+  padding: 0 0 110px;
+}
+
+.project-nav-inner {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 25px;
+
+  border-top: 1px solid var(--line);
+}
+
+.project-nav a {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .14em;
+
+  transition: gap .25s ease, opacity .25s ease;
+}
+
+.project-nav a:hover {
+  gap: 18px;
+  opacity: .6;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+  .project-hero {
+    padding-top: 75px;
+  }
+
+  .project-title-row {
+    gap: 40px;
+
+    margin-top: 50px;
+    margin-bottom: 65px;
+  }
+
+  .project-title {
+    font-size: clamp(68px, 11vw, 100px);
+  }
+
+  .project-main-image img {
+    height: 70vw;
+  }
+
+  .project-overview {
+    padding: 110px 0 130px;
+  }
+
+  .project-overview-grid {
+    grid-template-columns: 210px 1fr;
+    gap: 65px;
+  }
+
+  .project-intro h2 {
+    font-size: clamp(48px, 7vw, 66px);
+  }
+
+  .project-section {
+    padding: 120px 0;
+  }
+
+  .palette-layout {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+
+  .materials-list {
+    gap: 38px;
+  }
+
+  .composition-grid,
+  .reflection-grid {
+    gap: 65px;
+  }
+
+  .composition-statement p,
+  .reflection-statement p {
+    font-size: clamp(54px, 8vw, 72px);
+  }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 640px) {
+
+  .project-hero {
+    padding-top: 55px;
+  }
+
+  .project-kicker {
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding-bottom: 16px;
+
+    font-size: 8px;
+  }
+
+  .project-kicker span {
+    flex-shrink: 0;
+    font-size: 12px;
+  }
+
+  .project-title-row {
+    display: block;
+
+    margin-top: 38px;
+    margin-bottom: 48px;
+  }
+
+  .project-title {
+    font-size: clamp(54px, 16.5vw, 76px);
+    line-height: .82;
+  }
+
+  .project-title-side {
+    margin-top: 28px;
+    padding-bottom: 0;
+
+    text-align: left;
+  }
+
+  .project-title-side p {
+    font-size: 10px;
+  }
+
+  .project-title-side span {
+    margin-top: 12px;
+    font-size: 12px;
+  }
+
+  .project-main-image img {
+    height: 112vw;
+    max-height: 560px;
+  }
+
+
+  /* OVERVIEW */
+
+  .project-overview {
+    padding: 85px 0 105px;
+  }
+
+  .project-overview-grid {
+    display: block;
+  }
+
+  .project-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 24px;
+
+    margin-bottom: 75px;
+  }
+
+  .project-meta > div {
+    padding: 16px 0;
+  }
+
+  .project-meta span {
+    font-size: 9px;
+  }
+
+  .project-meta p {
+    font-size: 16px;
+  }
+
+  .project-intro h2 {
+    margin-top: 14px;
+
+    font-size: clamp(44px, 13vw, 59px);
+    line-height: .94;
+  }
+
+  .project-copy {
+    margin-top: 38px;
+
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .project-copy > p + p {
+    margin-top: 24px;
+  }
+
+
+  /* JAPANESE COPY */
+
+  .section-jp-copy {
+    margin-top: 32px;
+    padding-top: 20px;
+  }
+
+  .section-jp-copy > span {
+    font-size: 8px;
+  }
+
+  .section-jp-copy > p {
+    font-size: 11px;
+    line-height: 2.05;
+  }
+
+
+  /* COMMON */
+
+  .project-section {
+    padding: 100px 0;
+  }
+
+  .project-section-heading {
+    gap: 20px;
+    padding-bottom: 28px;
+  }
+
+  .project-section-number {
+    font-size: 16px;
+  }
+
+  .project-section-heading h2 {
+    font-size: clamp(43px, 13vw, 56px);
+  }
+
+  .project-section-heading p {
+    margin-top: 9px;
+    font-size: 10px;
+  }
+
+
+  /* PALETTE */
+
+  .palette-layout {
+    display: block;
+    margin-top: 60px;
+  }
+
+  .palette-statement {
+    font-size: clamp(44px, 13vw, 58px);
+  }
+
+  .palette-copy {
+    margin-top: 32px;
+
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .palette-swatches {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(52px, 1fr)
+    );
+
+    gap: 7px;
+
+    margin-top: 55px;
+  }
+
+  .palette-color {
+    aspect-ratio: 1 / 1.5;
+  }
+
+  .palette-item > div {
+    margin-top: 9px;
+  }
+
+  .palette-item p {
+    font-size: 7px;
+    letter-spacing: .08em;
+  }
+
+  .palette-item small {
+    display: none;
+  }
+
+
+  /* MATERIALS */
+
+  .materials-intro {
+    display: block;
+
+    margin-top: 55px;
+    margin-bottom: 55px;
+  }
+
+  .materials-intro > p:first-child {
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .materials-intro > p:last-child {
+    margin-top: 28px;
+
+    font-size: 11px;
+    line-height: 2.05;
+  }
+
+  .materials-list {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px 20px;
+  }
+
+  .materials-note {
+    grid-column: 1 / -1;
+  }
+
+  .materials-column,
+  .materials-note {
+    padding-top: 17px;
+  }
+
+  .materials-column > span,
+  .materials-note > span {
+    margin-bottom: 17px;
+    font-size: 9px;
+  }
+
+  .material-name {
+    padding: 12px 0;
+  }
+
+  .material-name .kr {
+    font-size: 13px;
+  }
+
+  .material-name .jp {
+    font-size: 10px;
+  }
+
+  .materials-note > p {
+    font-size: 21px;
+  }
+
+  .materials-note-jp {
+    font-size: 10px !important;
+  }
+
+
+  /* COMPOSITION + REFLECTION */
+
+  .composition-grid,
+  .reflection-grid {
+    display: block;
+    margin-top: 62px;
+  }
+
+  .composition-statement p,
+  .reflection-statement p {
+    font-size: clamp(48px, 15vw, 64px);
+    line-height: .85;
+  }
+
+  .composition-copy,
+  .reflection-copy {
+    margin-top: 55px;
+
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .composition-copy > p + p,
+  .reflection-copy > p + p {
+    margin-top: 25px;
+  }
+
+
+  /* FINAL VIEW */
+
+  .final-view-image {
+    margin-top: 60px;
+  }
+
+  .final-view-image img {
+    height: auto;
+    max-height: none;
+  }
+
+  .final-view-caption {
+    display: block;
+
+    margin-top: 18px;
+    padding-top: 17px;
+  }
+
+  .final-view-caption > div + div {
+    margin-top: 25px;
+  }
+
+  .final-view-caption p {
+    font-size: 10px;
+  }
+
+
+  /* REFLECTION */
+
+  .reflection-next {
+    margin-top: 45px;
+  }
+
+  .reflection-next p {
+    font-size: 13px;
+  }
+
+  .reflection-next-jp {
+    font-size: 10px !important;
+  }
+
+
+  /* NAV */
+
+  .project-nav {
+    padding-bottom: 75px;
+  }
+
+  .project-nav a {
+    gap: 8px;
+    font-size: 9px;
+  }
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media (max-width: 390px) {
+
+  .project-title {
+    font-size: 52px;
+  }
+
+  .project-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .materials-list {
+    grid-template-columns: 1fr;
+  }
+
+  .materials-note {
+    grid-column: auto;
+  }
+}
+
+
+/* ==================================================
+   JAPANESE TEXT SIZE — DETAIL PAGE OVERRIDE
+   상세페이지 일본어 본문/캡션을 16px로 통일
+   Footer는 main.css의 한국어 크기를 그대로 사용
+================================================== */
+
+.project-page [lang="ja"] {
+  font-size: 16px !important;
+}
+
+.site-footer .browser-note [lang="ja"] {
+  font-size: inherit !important;
+}
+
+
+/* ==================================================
+   KOREAN / JAPANESE READABILITY — DETAIL FINAL
+   Korean body: 18px
+   Japanese body: 16px
+   Footer: main.css 설정 사용
+================================================== */
+
+/* 상세페이지 일본어 */
+.project-page [lang="ja"] {
+  font-size: 16px !important;
+}
+
+/* 상세페이지 한글 본문 */
+.project-copy,
+.materials-intro > p:first-child,
+.material-name .kr,
+.composition-copy,
+.final-view-caption > div:first-child p,
+.reflection-copy,
+.reflection-next > p:not(.reflection-next-jp) {
+  font-size: 18px !important;
+}
+
+/* 일본어는 한글보다 약 2px 작게 */
+.section-jp-copy > p,
+.materials-intro > p:last-child,
+.material-name .jp,
+.materials-note-jp,
+.final-view-caption > div:last-child p,
+.reflection-next-jp {
+  font-size: 16px !important;
+}
+
+@media (max-width: 640px) {
+
+  .project-copy,
+  .materials-intro > p:first-child,
+  .material-name .kr,
+  .composition-copy,
+  .final-view-caption > div:first-child p,
+  .reflection-copy,
+  .reflection-next > p:not(.reflection-next-jp) {
+    font-size: 18px !important;
+  }
+
+  .section-jp-copy > p,
+  .materials-intro > p:last-child,
+  .material-name .jp,
+  .materials-note-jp,
+  .final-view-caption > div:last-child p,
+  .reflection-next-jp {
+    font-size: 16px !important;
+  }
+}

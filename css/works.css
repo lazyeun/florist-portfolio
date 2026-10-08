@@ -1,0 +1,959 @@
+/* ==================================================
+   WORKS ARCHIVE PAGE
+   works.html 전용
+   main.css 다음에 로드
+================================================== */
+
+
+/* ========================================
+   CURRENT NAV
+======================================== */
+
+.site-nav a[aria-current="page"]::after {
+  width: 100%;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.archive-hero {
+  padding: 78px 0 145px;
+}
+
+.archive-hero__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid var(--line);
+
+  color: var(--sub);
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .16em;
+}
+
+.archive-hero__top p:last-child {
+  font-family: var(--jp);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: .1em;
+}
+
+.archive-hero__title-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  align-items: end;
+
+  gap: 90px;
+
+  margin-top: 66px;
+}
+
+.archive-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(118px, 13vw, 205px);
+  font-weight: 400;
+
+  line-height: .72;
+  letter-spacing: -.065em;
+}
+
+.archive-hero h1 span {
+  display: block;
+  font-style: italic;
+}
+
+.archive-hero__copy {
+  padding-bottom: 13px;
+}
+
+.archive-hero__copy > p:first-child {
+  font-size: 13px;
+  line-height: 2;
+}
+
+.archive-hero__copy > p:last-child {
+  margin-top: 24px;
+
+  color: var(--sub);
+
+  font-family: var(--jp);
+  font-size: 11px;
+  font-weight: 300;
+
+  line-height: 2;
+}
+
+.archive-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 34px;
+
+  margin-top: 105px;
+}
+
+.archive-index a {
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  padding: 20px 0;
+
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .14em;
+
+  transition:
+    padding-left .25s ease,
+    opacity .25s ease;
+}
+
+.archive-index a:hover {
+  padding-left: 8px;
+  opacity: .65;
+}
+
+.archive-index span {
+  color: var(--sub);
+
+  font-family: var(--serif);
+  font-size: 18px;
+  font-style: italic;
+  letter-spacing: normal;
+}
+
+
+/* ========================================
+   COMMON SECTION
+======================================== */
+
+.archive-section {
+  scroll-margin-top: 90px;
+
+  padding: 150px 0 175px;
+}
+
+.archive-section__heading {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr) 300px;
+  align-items: end;
+
+  gap: 35px;
+
+  padding-bottom: 42px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.archive-section__number {
+  padding-bottom: 6px;
+
+  font-family: var(--serif);
+  font-size: 20px;
+  font-style: italic;
+}
+
+.archive-section__title {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 36px;
+}
+
+.archive-section__title h2 {
+  font-family: var(--serif);
+  font-size: clamp(65px, 6.6vw, 100px);
+  font-weight: 400;
+
+  line-height: .82;
+  letter-spacing: -.045em;
+}
+
+.archive-section__title p {
+  margin-top: 11px;
+
+  color: var(--sub);
+
+  font-family: var(--jp);
+  font-size: 11px;
+  font-weight: 300;
+
+  letter-spacing: .08em;
+}
+
+.archive-section__description {
+  padding-bottom: 7px;
+
+  color: var(--sub);
+
+  font-family: var(--serif);
+  font-size: 16px;
+  font-style: italic;
+
+  line-height: 1.55;
+}
+
+
+/* ========================================
+   SELF-DIRECTED
+======================================== */
+
+.archive-section--self {
+  background: var(--bg-soft);
+}
+
+.featured-work {
+  margin-top: 95px;
+}
+
+.featured-work__image {
+  position: relative;
+
+  overflow: hidden;
+
+  aspect-ratio: 16 / 8.7;
+
+  background: #e8e3da;
+}
+
+.featured-work__image img {
+  /*
+    featured 이미지는 transform으로 확대하지 않음.
+    넓은 이미지에서 Chrome GPU 합성선이 반복되어,
+    width/height/left/top 자체를 애니메이션하는 방식으로 변경.
+  */
+  position: absolute;
+
+  left: -1%;
+  top: -1%;
+
+  width: 102%;
+  height: 102%;
+
+  max-width: none;
+
+  object-fit: cover;
+  object-position: 50% 54%;
+
+  transition:
+    width .7s cubic-bezier(.22, .61, .36, 1),
+    height .7s cubic-bezier(.22, .61, .36, 1),
+    left .7s cubic-bezier(.22, .61, .36, 1),
+    top .7s cubic-bezier(.22, .61, .36, 1);
+}
+
+.featured-work__link:hover .featured-work__image img {
+  left: -2%;
+  top: -2%;
+
+  width: 104%;
+  height: 104%;
+}
+
+
+.featured-work__info {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px;
+
+  gap: 70px;
+
+  margin-top: 27px;
+  padding-top: 24px;
+
+  border-top: 1px solid var(--line);
+}
+
+.featured-work__info h3 {
+  max-width: 780px;
+
+  font-family: var(--serif);
+  font-size: clamp(53px, 5.4vw, 82px);
+  font-weight: 400;
+
+  line-height: .85;
+  letter-spacing: -.035em;
+}
+
+.archive-card__category {
+  margin-bottom: 15px;
+
+  color: var(--sub);
+
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .15em;
+}
+
+.archive-card__jp {
+  margin-top: 15px;
+
+  color: var(--sub);
+
+  font-family: var(--jp);
+  font-size: 11px;
+  font-weight: 300;
+
+  line-height: 1.8;
+}
+
+.featured-work__side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  min-height: 125px;
+
+  text-align: right;
+}
+
+.archive-card__date {
+  color: var(--sub);
+
+  font-family: var(--serif);
+  font-size: 14px;
+  font-style: italic;
+}
+
+.featured-work__note {
+  margin-top: 6px;
+
+  color: var(--sub);
+
+  font-size: 9px;
+  letter-spacing: .08em;
+}
+
+.featured-work__side > span {
+  margin-top: auto;
+
+  font-family: var(--serif);
+  font-size: 25px;
+}
+
+.archive-empty-note {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  margin-top: 95px;
+  padding-top: 20px;
+
+  border-top: 1px solid var(--line);
+
+  color: var(--sub);
+
+  font-family: var(--serif);
+  font-size: 14px;
+  font-style: italic;
+}
+
+.archive-empty-note span {
+  font-family: var(--jp);
+  font-size: 10px;
+  font-style: normal;
+}
+
+
+/* ========================================
+   CLASS WORK
+======================================== */
+
+.archive-section--class {
+  background: var(--bg);
+}
+
+.class-work-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 74px;
+  padding-bottom: 17px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.class-work-label p:first-child {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .17em;
+}
+
+.class-work-label p:last-child {
+  color: var(--sub);
+
+  font-family: var(--jp);
+  font-size: 10px;
+  font-weight: 300;
+}
+
+
+/* ========================================
+   ARCHIVE GRID
+======================================== */
+
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  column-gap: 34px;
+  row-gap: 105px;
+
+  margin-top: 55px;
+}
+
+.archive-card a {
+  display: block;
+}
+
+.archive-card__image {
+  position: relative;
+
+  overflow: hidden;
+
+  aspect-ratio: 4 / 5;
+
+  background: #ebe7e0;
+
+  /*
+    Chrome에서 transform 애니메이션 시 가장자리에 생기는
+    1px seam을 wrapper 안쪽에서 잘라냄.
+  */
+  clip-path: inset(1px);
+  isolation: isolate;
+}
+
+.archive-card__image img {
+  display: block;
+
+  /*
+    이미지를 wrapper보다 사방 2px 크게 깔아서
+    확대 중 sub-pixel 보간이 생겨도 가장자리가 노출되지 않게 함.
+  */
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+
+  margin: -2px;
+
+  object-fit: cover;
+  object-position: center center;
+
+  transform: scale(1.002);
+  transform-origin: center center;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  will-change: transform;
+
+  transition: transform .6s cubic-bezier(.22, .61, .36, 1);
+}
+
+.archive-card a:hover .archive-card__image img {
+  transform: scale(1.025);
+}
+
+
+.archive-card__info {
+  position: relative;
+
+  margin-top: 22px;
+  padding-top: 19px;
+
+  border-top: 1px solid var(--line);
+}
+
+.archive-card__info h3 {
+  max-width: calc(100% - 80px);
+
+  font-family: var(--serif);
+  font-size: clamp(29px, 2.6vw, 40px);
+  font-weight: 400;
+
+  line-height: .94;
+  letter-spacing: -.025em;
+}
+
+.archive-card__info .archive-card__jp {
+  max-width: calc(100% - 70px);
+}
+
+.archive-card__info .archive-card__date {
+  position: absolute;
+
+  top: 18px;
+  right: 0;
+}
+
+
+/* subtle rhythm without turning archive into homepage */
+.archive-card:nth-child(3n + 2) {
+  margin-top: 42px;
+}
+
+.archive-card:nth-child(3n) {
+  margin-top: 12px;
+}
+
+
+/* ========================================
+   BOTTOM
+======================================== */
+
+.archive-bottom {
+  padding: 150px 0 135px;
+
+  background: var(--bg-soft);
+}
+
+.archive-bottom__inner {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  align-items: end;
+
+  gap: 80px;
+}
+
+.archive-bottom__inner > p {
+  font-family: var(--serif);
+  font-size: clamp(66px, 7vw, 105px);
+
+  line-height: .8;
+  letter-spacing: -.045em;
+}
+
+.archive-bottom__inner > div {
+  padding-bottom: 8px;
+}
+
+.archive-bottom__inner > div > p {
+  margin-bottom: 45px;
+
+  color: var(--sub);
+
+  font-family: var(--jp);
+  font-size: 11px;
+  font-weight: 300;
+
+  line-height: 2;
+}
+
+.archive-bottom a {
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 11px;
+
+  border-bottom: 1px solid var(--text);
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .14em;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+  .archive-hero {
+    padding: 65px 0 115px;
+  }
+
+  .archive-hero__title-row {
+    grid-template-columns: minmax(0, 1fr) 230px;
+
+    gap: 55px;
+  }
+
+  .archive-hero h1 {
+    font-size: clamp(92px, 14vw, 135px);
+  }
+
+  .archive-index {
+    margin-top: 80px;
+  }
+
+  .archive-section {
+    padding: 120px 0 145px;
+  }
+
+  .archive-section__heading {
+    grid-template-columns: 45px minmax(0, 1fr);
+  }
+
+  .archive-section__description {
+    grid-column: 2;
+    max-width: 380px;
+
+    margin-top: 7px;
+  }
+
+  .archive-section__title {
+    gap: 25px;
+  }
+
+  .archive-section__title h2 {
+    font-size: clamp(56px, 8vw, 78px);
+  }
+
+  .featured-work {
+    margin-top: 75px;
+  }
+
+  .featured-work__info h3 {
+    font-size: clamp(48px, 7vw, 65px);
+  }
+
+  .archive-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 28px;
+    row-gap: 90px;
+  }
+
+  .archive-card:nth-child(3n + 2),
+  .archive-card:nth-child(3n) {
+    margin-top: 0;
+  }
+
+  .archive-card:nth-child(even) {
+    margin-top: 48px;
+  }
+
+  .archive-card__info h3 {
+    font-size: clamp(31px, 4vw, 42px);
+  }
+
+  .archive-bottom {
+    padding: 120px 0;
+  }
+
+  .archive-bottom__inner {
+    grid-template-columns: 1fr 230px;
+
+    gap: 55px;
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 640px) {
+
+  .archive-hero {
+    padding: 55px 0 90px;
+  }
+
+  .archive-hero__top {
+    font-size: 8px;
+  }
+
+  .archive-hero__top p:last-child {
+    font-size: 9px;
+  }
+
+  .archive-hero__title-row {
+    display: block;
+
+    margin-top: 48px;
+  }
+
+  .archive-hero h1 {
+    font-size: clamp(76px, 25vw, 108px);
+    line-height: .73;
+  }
+
+  .archive-hero__copy {
+    max-width: 320px;
+
+    margin-top: 48px;
+    padding-bottom: 0;
+  }
+
+  .archive-hero__copy > p:first-child {
+    font-size: 12px;
+  }
+
+  .archive-hero__copy > p:last-child {
+    margin-top: 20px;
+
+    font-size: 10px;
+  }
+
+  .archive-index {
+    display: block;
+
+    margin-top: 65px;
+  }
+
+  .archive-index a + a {
+    border-top: 0;
+  }
+
+  .archive-index a {
+    font-size: 9px;
+  }
+
+
+  /* SECTION */
+
+  .archive-section {
+    padding: 95px 0 115px;
+  }
+
+  .archive-section__heading {
+    grid-template-columns: 34px minmax(0, 1fr);
+
+    gap: 15px;
+
+    padding-bottom: 28px;
+  }
+
+  .archive-section__number {
+    font-size: 16px;
+  }
+
+  .archive-section__title {
+    display: block;
+  }
+
+  .archive-section__title h2 {
+    font-size: clamp(45px, 13.5vw, 60px);
+    line-height: .87;
+  }
+
+  .archive-section__title p {
+    margin-top: 10px;
+
+    font-size: 9px;
+  }
+
+  .archive-section__description {
+    grid-column: 2;
+
+    font-size: 13px;
+  }
+
+
+  /* SELF */
+
+  .featured-work {
+    margin-top: 58px;
+  }
+
+  .featured-work__image {
+    aspect-ratio: 4 / 4.6;
+  }
+
+  .featured-work__info {
+    display: block;
+
+    margin-top: 19px;
+    padding-top: 18px;
+  }
+
+  .featured-work__info h3 {
+    max-width: 90%;
+
+    font-size: clamp(43px, 13vw, 58px);
+  }
+
+  .featured-work__side {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+
+    min-height: auto;
+
+    margin-top: 28px;
+
+    text-align: left;
+  }
+
+  .featured-work__note {
+    grid-column: 1;
+  }
+
+  .featured-work__side > span {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+
+    margin-top: 0;
+  }
+
+  .archive-empty-note {
+    display: block;
+
+    margin-top: 65px;
+
+    font-size: 12px;
+  }
+
+  .archive-empty-note span {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 9px;
+  }
+
+
+  /* CLASS */
+
+  .class-work-label {
+    align-items: flex-start;
+
+    margin-top: 55px;
+  }
+
+  .class-work-label p:first-child {
+    font-size: 8px;
+  }
+
+  .class-work-label p:last-child {
+    font-size: 9px;
+  }
+
+  .archive-grid {
+    display: block;
+
+    margin-top: 42px;
+  }
+
+  .archive-card,
+  .archive-card:nth-child(even),
+  .archive-card:nth-child(3n + 2),
+  .archive-card:nth-child(3n) {
+    margin-top: 0;
+  }
+
+  .archive-card + .archive-card {
+    margin-top: 75px;
+  }
+
+  .archive-card__image {
+    aspect-ratio: 4 / 5;
+  }
+
+  .archive-card__info {
+    margin-top: 18px;
+    padding-top: 16px;
+  }
+
+  .archive-card__category {
+    margin-bottom: 12px;
+
+    font-size: 8px;
+  }
+
+  .archive-card__info h3 {
+    max-width: 82%;
+
+    font-size: clamp(32px, 10vw, 42px);
+  }
+
+  .archive-card__jp {
+    max-width: 80%;
+
+    margin-top: 11px;
+
+    font-size: 10px;
+  }
+
+  .archive-card__date {
+    font-size: 12px;
+  }
+
+  .archive-card__info .archive-card__date {
+    top: 15px;
+  }
+
+
+  /* BOTTOM */
+
+  .archive-bottom {
+    padding: 95px 0;
+  }
+
+  .archive-bottom__inner {
+    display: block;
+  }
+
+  .archive-bottom__inner > p {
+    font-size: clamp(53px, 16vw, 72px);
+  }
+
+  .archive-bottom__inner > div {
+    margin-top: 55px;
+    padding-bottom: 0;
+  }
+
+  .archive-bottom__inner > div > p {
+    margin-bottom: 30px;
+
+    font-size: 10px;
+  }
+
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media (max-width: 390px) {
+
+  .archive-hero h1 {
+    font-size: 73px;
+  }
+
+  .archive-section__title h2 {
+    font-size: 43px;
+  }
+
+  .archive-card__info h3 {
+    max-width: 78%;
+    font-size: 31px;
+  }
+
+}
+
+
+/* ==================================================
+   KOREAN / JAPANESE READABILITY — WORKS FINAL
+   works.html 본문도 같은 비율 유지
+================================================== */
+
+/* works 페이지 일본어 */
+.works-page [lang="ja"] {
+  font-size: 16px !important;
+}
+
+/* works 페이지의 한국어 소개문 */
+.archive-hero__copy > p:first-child {
+  font-size: 18px !important;
+}
+
+@media (max-width: 640px) {
+  .archive-hero__copy > p:first-child {
+    font-size: 18px !important;
+  }
+}
