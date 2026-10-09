@@ -561,8 +561,29 @@
   font-size: 10px;
   font-weight: 500;
   letter-spacing: .14em;
+
+   transition:
+    gap .3s ease,
+    color .3s ease,
+    opacity .3s ease;
 }
 
+.archive-bottom a span{
+    display: inline-block;
+
+  transition: transform .3s ease;
+}
+
+.archive-bottom a:hover{
+   gap: 65px;
+
+  color: var(--accent);
+  opacity: .78;
+}
+
+.archive-bottom a:hover span {
+  transform: translate(5px, -5px);
+}
 
 /* ==================================================
    TABLET
@@ -944,16 +965,16 @@
 
 /* works 페이지 일본어 */
 .works-page [lang="ja"] {
-  font-size: 16px !important;
+  font-size: 14px !important;
 }
 
 /* works 페이지의 한국어 소개문 */
 .archive-hero__copy > p:first-child {
-  font-size: 18px !important;
+  font-size: 16px !important;
 }
 
 @media (max-width: 640px) {
   .archive-hero__copy > p:first-child {
-    font-size: 18px !important;
+    font-size: 16px !important;
   }
 }

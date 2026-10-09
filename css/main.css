@@ -676,74 +676,64 @@ textarea {
 
 
 /* ========================================
-   ABOUT GRID
+   ABOUT EDITORIAL LAYOUT
 ======================================== */
 
-.about-grid {
+.about-layout {
   display: grid;
 
-  /*
-    왼쪽 설명 / 오른쪽 education
-  */
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(430px, .95fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
 
-  column-gap: clamp(80px, 9vw, 150px);
+  column-gap: 34px;
 
-  margin-top: 70px;
+  margin-top: 72px;
+}
+
+.about-block {
+  min-width: 0;
 }
 
 
-/* ========================================
-   LEFT
-======================================== */
+/* ---------- INTRO ---------- */
 
 .about-main {
+  grid-column: 1 / span 5;
+  grid-row: 1;
+
   max-width: 590px;
 }
 
-
-/* 타이틀 */
-
 .about-title {
-  padding-top: 26px;
+  padding-top: 20px;
 }
 
 .about-en {
   font-family: var(--serif);
 
-  /*
-    너무 작게 쓰면 일반 본문처럼 보여서
-    에디토리얼 카피 역할을 할 정도로 키움.
-  */
-  font-size: clamp(38px, 3.4vw, 54px);
+  font-size: 72px;
   font-weight: 400;
 
-  line-height: 1.02;
-  letter-spacing: -.025em;
+  line-height: .98;
+  letter-spacing: -.032em;
 }
 
 .about-title-jp {
-  margin-top: 30px;
+  margin-top: 31px;
 
   color: var(--text);
 
   font-family: var(--jp);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
 
   line-height: 2;
   letter-spacing: .03em;
 }
 
-
-/* 소개 본문 */
-
 .about-copy {
-  margin-top: 58px;
+  margin-top: 60px;
 
-  font-size: 15px;
+  font-size: 14px;
   line-height: 2.15;
 }
 
@@ -752,7 +742,7 @@ textarea {
 }
 
 .about-lead {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 2;
 }
 
@@ -762,45 +752,38 @@ textarea {
   color: var(--text);
 
   font-family: var(--jp);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 300;
 
   line-height: 2.2;
 }
 
 
-/* ========================================
-   RIGHT : EDUCATION
-======================================== */
+/* ---------- SHARED SMALL SECTION TITLES ---------- */
 
-.about-education {
-  /*
-    왼쪽 소개보다 살짝 아래에서 시작해서
-    완전히 대칭인 이력서 레이아웃을 피함.
-  */
-  margin-top: 170px;
+.education-title,
+.certification-title,
+.background-title {
+  margin-bottom: 46px;
 }
 
-
-/* EDUCATION TITLE */
-
-.education-title {
-  margin-bottom: 48px;
-}
-
-.education-title h3 {
+.education-title h3,
+.certification-title h3,
+.background-title h3 {
   margin: 0;
 
   font-family: var(--serif);
-  font-size: 48px;
+  font-size: 44px;
   font-weight: 400;
 
   line-height: 1;
   letter-spacing: -.025em;
 }
 
-.education-title p {
-  margin-top:14px;
+.education-title p,
+.certification-title p,
+.background-title p {
+  margin-top: 13px;
 
   color: var(--sub);
 
@@ -808,22 +791,24 @@ textarea {
   font-size: 12px;
   font-weight: 300;
 
-  letter-spacing: .08em;
+  line-height: 1.8;
+  letter-spacing: .075em;
 }
 
 
-/* EDUCATION LIST */
+/* ---------- EDUCATION ---------- */
+
+.about-education {
+  grid-column: 7 / span 6;
+  grid-row: 1;
+
+  margin-top: 150px;
+}
 
 .about-history {
   margin: 0;
   padding: 0;
 }
-
-
-/*
-  education 전체 위에는 선 없음.
-  각각의 이력 아래에만 가는 선.
-*/
 
 .about-history > div {
   display: grid;
@@ -853,10 +838,7 @@ textarea {
   font-weight: 400;
 
   line-height: 1.5;
-
   white-space: nowrap;
-
-  color: var(--sub);
 }
 
 .about-history dd {
@@ -867,6 +849,73 @@ textarea {
 
   line-height: 1.6;
 }
+
+.education-course {
+  display: block;
+}
+
+.education-school {
+  display: block;
+
+  margin-top: 7px;
+
+  color: var(--sub);
+
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 300;
+
+  line-height: 1.5;
+  letter-spacing: .035em;
+}
+
+
+/* ---------- CERTIFICATION ---------- */
+
+.about-certification {
+  grid-column: 2 / span 4;
+  grid-row: 2;
+
+  margin-top: 122px;
+}
+
+.certification-list {
+  min-height: 125px;
+}
+
+
+/* ---------- BACKGROUND ---------- */
+
+.about-background {
+  grid-column: 7 / span 5;
+  grid-row: 2;
+
+  margin-top: 52px;
+}
+
+.background-copy {
+  max-width: 535px;
+}
+
+.background-copy > p:first-child {
+  font-size: 14px;
+  font-weight: 300;
+
+  line-height: 2.05;
+}
+
+.background-copy > p:last-child {
+  margin-top: 25px;
+
+  color: var(--sub);
+
+  font-family: var(--jp);
+  font-size: 12px;
+  font-weight: 300;
+
+  line-height: 2.1;
+}
+
 
 /* ========================================
    CONTACT
@@ -915,10 +964,11 @@ textarea {
   justify-content: flex-end;
 }
 
-.contact-links a {
+.contact-links .contact-link {
   display: flex;
 
   justify-content: space-between;
+  align-items: center;
 
   padding: 27px 0;
 
@@ -929,17 +979,187 @@ textarea {
   letter-spacing: .14em;
 
   transition:
-    padding-left .2s ease,
-    padding-right .2s ease;
+    padding-left .3s ease,
+    padding-right .3s ease,
+    color .3s ease,
+    opacity .3s ease;
 }
 
-.contact-links a:first-child {
+.contact-links .contact-link::after {
+  content: "↗";
+
+  flex-shrink: 0;
+
+  font-family: var(--serif);
+  font-size: 19px;
+  font-style: italic;
+  letter-spacing: normal;
+
+  opacity: 0;
+
+  transform: translate(-8px, 5px);
+
+  transition:
+    opacity .3s ease,
+    transform .3s ease;
+}
+
+.contact-links .contact-link:first-child {
   border-top: 1px solid var(--line);
 }
 
-.contact-links a:hover {
-  padding-left: 10px;
-  padding-right: 5px;
+.contact-links .contact-link:hover {
+  padding-left: 12px;
+  padding-right: 7px;
+
+  color: var(--accent);
+}
+
+.contact-links .contact-link:hover::after {
+  opacity: 1;
+
+  transform: translate(0, 0);
+}
+
+
+
+
+/* EMAIL COPY INTERACTION */
+
+.contact-links button.contact-link {
+  width: 100%;
+
+  margin: 0;
+
+  border: 0;
+  border-bottom: 1px solid var(--line);
+
+  background: transparent;
+
+  color: inherit;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: inherit;
+  line-height: inherit;
+
+  text-align: left;
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.contact-links button.contact-link:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.contact-links .contact-link:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 5px;
+}
+
+.copy-toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 270px;
+
+  padding: 16px 19px 15px;
+
+  border: 1px solid var(--line);
+
+  background: rgba(247, 245, 240, .96);
+
+  color: var(--text);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translate(-50%, calc(-50% + 10px));
+
+  pointer-events: none;
+
+  transition:
+    opacity .28s ease,
+    transform .28s ease,
+    visibility 0s linear .28s;
+}
+
+.copy-toast.is-visible {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translate(-50%, -50%);
+
+  transition-delay: 0s;
+}
+
+.copy-toast__kr {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+
+  line-height: 1.6;
+  letter-spacing: .02em;
+}
+
+.copy-toast__jp {
+  margin-top: 4px;
+
+  color: var(--sub);
+
+  font-family: var(--jp);
+  font-size: 10px !important;
+  font-weight: 300;
+
+  line-height: 1.6;
+  letter-spacing: .035em;
+}
+
+@media (max-width: 640px) {
+  .contact-links button.contact-link {
+    font-size: 10px;
+  }
+
+  .copy-toast {
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+
+    width: calc(100% - 40px);
+    min-width: 0;
+
+    padding: 14px 16px 13px;
+
+    transform: translate(-50%, calc(-50% + 10px));
+  }
+
+  .copy-toast.is-visible {
+    transform: translate(-50%, -50%);
+  }
+
+  .copy-toast__kr {
+    font-size: 10px;
+  }
+
+  .copy-toast__jp {
+    font-size: 9px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .copy-toast {
+    transition: none;
+  }
 }
 
 
@@ -1449,27 +1669,37 @@ textarea {
   /* ABOUT */
 
   .about-section {
-    padding: 130px 0 145px;
+    padding: 130px 0 150px;
   }
 
   .section-heading-title h2 {
     font-size: clamp(64px, 10vw, 88px);
   }
 
-  .about-grid {
-    grid-template-columns: 1fr 1fr;
+  .about-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     column-gap: 55px;
 
     margin-top: 65px;
   }
 
+  .about-main {
+    grid-column: 1;
+    grid-row: 1;
+
+    max-width: none;
+  }
+
   .about-en {
-    font-size: 42px;
+    font-size: 60px;
   }
 
   .about-education {
-    margin-top: 120px;
+    grid-column: 2;
+    grid-row: 1;
+
+    margin-top: 105px;
   }
 
   .about-history > div {
@@ -1480,30 +1710,51 @@ textarea {
 
   .about-history dt {
     margin-bottom: 8px;
-  }
-  .about-copy {
-    font-size: 14px;
-  }
 
-  .about-lead {
-    font-size: 15px;
-  }
-
-  .about-copy-jp,
-  .about-title-jp {
-    font-size: 13px;
-  }
-
-  .education-title h3 {
-    font-size: 44px;
-  }
-
-  .about-history dt {
     font-size: 14px;
   }
 
   .about-history dd {
     font-size: 13px;
+  }
+
+  .education-school {
+    margin-top: 5px;
+
+    font-size: 10px;
+  }
+
+  .education-title h3,
+  .certification-title h3,
+  .background-title h3 {
+    font-size: 40px;
+  }
+
+  .about-certification {
+    grid-column: 1;
+    grid-row: 2;
+
+    margin-top: 105px;
+    margin-left: 28px;
+  }
+
+  .certification-list {
+    min-height: 100px;
+  }
+
+  .about-background {
+    grid-column: 2;
+    grid-row: 2;
+
+    margin-top: 48px;
+  }
+
+  .background-copy > p:first-child {
+    font-size: 14px;
+  }
+
+  .background-copy > p:last-child {
+    font-size: 12px;
   }
 
 
@@ -1776,9 +2027,6 @@ textarea {
     padding: 105px 0 120px;
   }
 
-
-  /* HEADER */
-
   .about-heading {
     padding-bottom: 30px;
   }
@@ -1801,17 +2049,11 @@ textarea {
     font-size: 9px;
   }
 
-
-  /* GRID → SINGLE COLUMN */
-
-  .about-grid {
+  .about-layout {
     display: block;
 
     margin-top: 55px;
   }
-
-
-  /* LEFT */
 
   .about-main {
     max-width: none;
@@ -1822,9 +2064,9 @@ textarea {
   }
 
   .about-en {
-    font-size: 42px;
+    font-size: 52px;
 
-    line-height: 1.03;
+    line-height: 1.01;
   }
 
   .about-title-jp {
@@ -1836,11 +2078,12 @@ textarea {
   .about-copy {
     margin-top: 48px;
 
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 2;
   }
 
   .about-lead {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .about-copy > p + p {
@@ -1850,57 +2093,42 @@ textarea {
   .about-copy-jp {
     margin-top: 32px !important;
 
-    font-size: 11px;
-  }
-
-  .about-copy {
-    font-size: 13px;
-    line-height: 2;
-  }
-
-  .about-lead {
-    font-size: 14px;
-  }
-
-  .about-copy-jp {
     font-size: 12px;
   }
 
-  .about-title-jp {
-    font-size: 12px;
+  .about-education,
+  .about-certification,
+  .about-background {
+    margin-left: 0;
   }
-
-  .education-title h3 {
-    font-size: 40px;
-  }
-
-  .education-title p {
-    font-size: 10px;
-  }
-
-  .about-history dt {
-    font-size: 13px;
-  }
-
-  .about-history dd {
-    font-size: 13px;
-  }
-
-  /* EDUCATION */
 
   .about-education {
-    margin-top: 85px;
+    margin-top: 90px;
   }
 
-  .education-title {
-    margin-bottom: 38px;
+  .about-certification {
+    margin-top: 88px;
   }
 
-  .education-title h3 {
+  .about-background {
+    margin-top: 78px;
+  }
+
+  .education-title,
+  .certification-title,
+  .background-title {
+    margin-bottom: 36px;
+  }
+
+  .education-title h3,
+  .certification-title h3,
+  .background-title h3 {
     font-size: 38px;
   }
 
-  .education-title p {
+  .education-title p,
+  .certification-title p,
+  .background-title p {
     margin-top: 10px;
 
     font-size: 10px;
@@ -1930,6 +2158,34 @@ textarea {
     font-size: 11px;
   }
 
+  .education-school {
+    margin-top: 5px;
+
+    font-size: 10px;
+  }
+
+  .certification-list {
+    min-height: 85px;
+  }
+
+  .background-copy {
+    max-width: none;
+  }
+
+  .background-copy > p:first-child {
+    font-size: 14px;
+
+    line-height: 1.95;
+  }
+
+  .background-copy > p:last-child {
+    margin-top: 18px;
+
+    font-size: 12px;
+    line-height: 2;
+  }
+
+
   /* CONTACT */
 
   .contact-section {
@@ -1954,7 +2210,7 @@ textarea {
     font-size: 10px;
   }
 
-  .contact-links a {
+  .contact-links .contact-link {
     padding: 23px 0;
 
     font-size: 10px;
@@ -2252,12 +2508,12 @@ textarea {
 
 /* ==================================================
    JAPANESE TEXT SIZE — GLOBAL CONTENT OVERRIDE
-   본문 내 일본어는 16px로 통일
+   본문 내 일본어는 14px로 통일
    Footer 일본어는 한국어와 동일한 크기를 유지
 ================================================== */
 
-main [lang="ja"] {
-  font-size: 16px !important;
+main [lang="ja"]:not(.about-title-jp):not(.about-copy-jp) {
+  font-size: 14px !important;
 }
 
 /* Footer는 부모(.browser-note)의 한국어 크기를 그대로 따름 */
@@ -2268,21 +2524,31 @@ main [lang="ja"] {
 
 /* ==================================================
    KOREAN / JAPANESE READABILITY — FINAL
-   Korean body: 18px
-   Japanese body: 16px
+   General Korean body: 16px
+   General Japanese body: 14px
+   ABOUT intro: EN 72px / KR 14px / JP 12px
    Footer: 12px, Korean/Japanese same size
 ================================================== */
 
 /* 일본어 본문 */
 main [lang="ja"] {
-  font-size: 16px !important;
+  font-size: 14px !important;
 }
 
 /* 메인 페이지 한국어 본문 */
-.hero-description,
-.about-copy,
-.about-lead {
-  font-size: 18px !important;
+.hero-description {
+  font-size: 16px !important;
+}
+
+/* ABOUT intro — editorial hierarchy */
+.about-main .about-copy,
+.about-main .about-lead {
+  font-size: 14px !important;
+}
+
+.about-main .about-title-jp,
+.about-main .about-copy-jp {
+  font-size: 12px !important;
 }
 
 /* 푸터는 한글/일본어 동일 크기 */
@@ -2297,11 +2563,19 @@ main [lang="ja"] {
 
 @media (max-width: 640px) {
 
-  /* 모바일에서도 한글이 일본어보다 약 2px 크게 유지 */
-  .hero-description,
-  .about-copy,
-  .about-lead {
-    font-size: 18px !important;
+  /* 모바일에서도 메인 소개문은 동일한 위계 유지 */
+  .hero-description {
+    font-size: 16px !important;
+  }
+
+  .about-main .about-copy,
+  .about-main .about-lead {
+    font-size: 14px !important;
+  }
+
+  .about-main .about-title-jp,
+  .about-main .about-copy-jp {
+    font-size: 12px !important;
   }
 
   /* 기존 모바일 8~10px보다 2px 정도 확대 */
@@ -2489,13 +2763,26 @@ main [lang="ja"] {
   letter-spacing: .14em;
 
   transition:
-    gap .25s ease,
-    opacity .25s ease;
+    gap .3s ease,
+    color .3s ease,
+    opacity .3s ease;
+}
+
+.section-more a span {
+  display: inline-block;
+
+  transition: transform .3s ease;
 }
 
 .section-more a:hover {
   gap: 65px;
-  opacity: .65;
+
+  color: var(--accent);
+  opacity: .78;
+}
+
+.section-more a:hover span {
+  transform: translate(5px, -5px);
 }
 
 

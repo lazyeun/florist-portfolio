@@ -1069,12 +1069,12 @@
 
 /* ==================================================
    JAPANESE TEXT SIZE — DETAIL PAGE OVERRIDE
-   상세페이지 일본어 본문/캡션을 16px로 통일
+   상세페이지 일본어 본문/캡션을 14px로 통일
    Footer는 main.css의 한국어 크기를 그대로 사용
 ================================================== */
 
 .project-page [lang="ja"] {
-  font-size: 16px !important;
+  font-size: 14px !important;
 }
 
 .site-footer .browser-note [lang="ja"] {
@@ -1084,14 +1084,14 @@
 
 /* ==================================================
    KOREAN / JAPANESE READABILITY — DETAIL FINAL
-   Korean body: 18px
-   Japanese body: 16px
+   Korean body: 16px
+   Japanese body: 14px
    Footer: main.css 설정 사용
 ================================================== */
 
 /* 상세페이지 일본어 */
 .project-page [lang="ja"] {
-  font-size: 16px !important;
+  font-size: 14px !important;
 }
 
 /* 상세페이지 한글 본문 */
@@ -1102,7 +1102,7 @@
 .final-view-caption > div:first-child p,
 .reflection-copy,
 .reflection-next > p:not(.reflection-next-jp) {
-  font-size: 18px !important;
+  font-size: 16px !important;
 }
 
 /* 일본어는 한글보다 약 2px 작게 */
@@ -1112,7 +1112,7 @@
 .materials-note-jp,
 .final-view-caption > div:last-child p,
 .reflection-next-jp {
-  font-size: 16px !important;
+  font-size: 14px !important;
 }
 
 @media (max-width: 640px) {
@@ -1124,7 +1124,7 @@
   .final-view-caption > div:first-child p,
   .reflection-copy,
   .reflection-next > p:not(.reflection-next-jp) {
-    font-size: 18px !important;
+    font-size: 16px !important;
   }
 
   .section-jp-copy > p,
@@ -1133,6 +1133,6 @@
   .materials-note-jp,
   .final-view-caption > div:last-child p,
   .reflection-next-jp {
-    font-size: 16px !important;
+    font-size: 14px !important;
   }
 }
