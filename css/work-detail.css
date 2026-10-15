@@ -1136,3 +1136,339 @@
     font-size: 14px !important;
   }
 }
+
+/* ==================================================
+   SUPPLEMENTARY PROJECT MEDIA
+   Materials reference / process view / wrapped detail
+   상세페이지에서 사진 보강 시 공통으로 재사용
+================================================== */
+
+.detail-reference {
+  margin-top: 88px;
+}
+
+.detail-reference__image,
+.process-view__image,
+.final-detail__image {
+  margin: 0;
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+
+.detail-reference__image img,
+.process-view__image img,
+.final-detail__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.detail-reference__caption {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 70px;
+
+  margin-top: 24px;
+  padding-top: 22px;
+
+  border-top: 1px solid var(--line);
+}
+
+.detail-reference__caption span,
+.detail-media-kicker {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--sub);
+
+  font-size: 9px;
+  font-weight: 500;
+
+  line-height: 1.5;
+  letter-spacing: .14em;
+}
+
+.detail-reference__caption p {
+  color: var(--sub);
+
+  line-height: 2;
+}
+
+.detail-reference__caption > div:first-child p {
+  font-size: 16px;
+}
+
+.detail-reference__caption > div:last-child p {
+  font-family: var(--jp);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+
+/* PROCESS VIEW */
+
+.process-view {
+  display: grid;
+
+  grid-template-columns: .88fr 1.12fr;
+
+  gap: 82px;
+
+  align-items: start;
+
+  margin-top: 105px;
+  padding-top: 40px;
+
+  border-top: 1px solid var(--line);
+}
+
+.process-view__copy {
+  max-width: 560px;
+
+  padding-top: 8px;
+}
+
+.detail-editorial-title {
+  font-family: var(--serif);
+  font-size: clamp(42px, 4.3vw, 64px);
+  font-weight: 400;
+
+  line-height: .9;
+  letter-spacing: -.035em;
+}
+
+.process-view__copy > p:not(.detail-media-kicker) {
+  margin-top: 30px;
+
+  font-size: 16px;
+  line-height: 2.08;
+}
+
+.process-view__copy .section-jp-copy {
+  margin-top: 34px;
+}
+
+.process-view__copy .section-jp-copy > p {
+  margin-top: 0;
+
+  font-size: 14px !important;
+}
+
+
+/* FINAL — WRAPPED DETAIL */
+
+.final-detail {
+  display: grid;
+
+  grid-template-columns: .72fr 1.28fr;
+
+  gap: 84px;
+
+  align-items: start;
+
+  margin-top: 95px;
+  padding-top: 42px;
+
+  border-top: 1px solid var(--line);
+}
+
+.final-detail__copy {
+  max-width: 460px;
+
+  padding-top: 8px;
+}
+
+.final-detail__copy > p:not(.detail-media-kicker) {
+  margin-top: 30px;
+
+  font-size: 16px;
+  line-height: 2.08;
+}
+
+.final-detail__copy .section-jp-copy {
+  margin-top: 34px;
+}
+
+.final-detail__copy .section-jp-copy > p {
+  margin-top: 0;
+
+  font-size: 14px !important;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .detail-reference {
+    margin-top: 75px;
+  }
+
+  .detail-reference__caption {
+    gap: 45px;
+  }
+
+  .process-view {
+    gap: 55px;
+
+    margin-top: 85px;
+  }
+
+  .final-detail {
+    grid-template-columns: .82fr 1.18fr;
+
+    gap: 55px;
+
+    margin-top: 78px;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+
+  .detail-reference {
+    margin-top: 58px;
+  }
+
+  .detail-reference__caption {
+    display: block;
+
+    margin-top: 18px;
+    padding-top: 17px;
+  }
+
+  .detail-reference__caption > div + div {
+    margin-top: 28px;
+  }
+
+  .detail-reference__caption > div:first-child p {
+    font-size: 16px;
+  }
+
+  .detail-reference__caption > div:last-child p {
+    font-size: 14px;
+  }
+
+
+  .process-view {
+    display: block;
+
+    margin-top: 72px;
+    padding-top: 28px;
+  }
+
+  .process-view__copy {
+    max-width: none;
+
+    margin-top: 40px;
+    padding-top: 0;
+  }
+
+  .detail-editorial-title {
+    font-size: clamp(40px, 12.5vw, 54px);
+  }
+
+  .process-view__copy > p:not(.detail-media-kicker) {
+    margin-top: 25px;
+
+    font-size: 16px;
+    line-height: 2;
+  }
+
+  .process-view__copy .section-jp-copy > p {
+    font-size: 14px !important;
+  }
+
+
+  .final-detail {
+    display: flex;
+    flex-direction: column-reverse;
+
+    gap: 0;
+
+    margin-top: 68px;
+    padding-top: 28px;
+  }
+
+  .final-detail__copy {
+    max-width: none;
+
+    margin-top: 38px;
+    padding-top: 0;
+  }
+
+  .final-detail__copy > p:not(.detail-media-kicker) {
+    margin-top: 25px;
+
+    font-size: 16px;
+    line-height: 2;
+  }
+
+  .final-detail__copy .section-jp-copy > p {
+    font-size: 14px !important;
+  }
+
+}
+
+
+/* PORTRAIT MATERIAL REFERENCE
+   세로형 소재 사진은 풀폭 대신 우측으로 좁혀 배치 */
+
+.detail-reference--portrait {
+  width: min(72%, 820px);
+  margin-left: auto;
+}
+
+@media (max-width: 900px) {
+  .detail-reference--portrait { width: min(82%, 720px); }
+}
+
+@media (max-width: 640px) {
+  .detail-reference--portrait { width: 100%; margin-left: 0; }
+}
+
+
+/* ==================================================
+   TALL PROJECT IMAGES
+   세로 방향성이 강한 작품용 공통 옵션
+================================================== */
+
+.process-view--tall {
+  grid-template-columns: .78fr 1.22fr;
+}
+
+.process-view--tall .process-view__image {
+  max-width: 620px;
+}
+
+.final-view-image--portrait {
+  width: min(72%, 860px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-view-image--portrait img { max-height: none; }
+
+@media (max-width: 900px) {
+  .process-view--tall { grid-template-columns: .9fr 1.1fr; }
+  .final-view-image--portrait { width: min(82%, 760px); }
+}
+
+@media (max-width: 640px) {
+  .process-view--tall { display: block; }
+  .process-view--tall .process-view__image { max-width: none; }
+  .final-view-image--portrait { width: 100%; }
+}
+
+
+/* NARROW FINAL DETAIL FOR VERTICAL CLOSE-UP */
+.final-detail__image--portrait { max-width: 620px; }
+
+
+/* FORMAL LINEAR DETAIL PAGE SUPPORT */
+.project-main-image img { display:block; }
