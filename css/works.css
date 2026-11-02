@@ -978,3 +978,101 @@
     font-size: 16px !important;
   }
 }
+
+
+/* ==================================================
+   CLASS WORK — COURSE NAVIGATION / SUBSECTIONS
+   Moved from works.html; no visual changes
+================================================== */
+
+.course-nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 34px;
+      margin-top: 74px;
+    }
+
+    .course-nav a {
+      display: flex;
+      align-items: baseline;
+      gap: 15px;
+      min-width: 0;
+      padding: 19px 0;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      transition: opacity .25s ease, padding-left .25s ease;
+    }
+
+    .course-nav a:hover,
+    .course-nav a:focus-visible {
+      padding-left: 7px;
+      opacity: .7;
+    }
+
+    .course-nav__number {
+      color: var(--sub);
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .course-nav__jp {
+      margin-left: auto;
+      color: var(--sub);
+      font-family: var(--jp);
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 0;
+    }
+
+    .class-course {
+      display: flow-root;
+      scroll-margin-top: 115px;
+    }
+
+    .class-course > .class-work-label {
+      margin-top: 55px;
+    }
+
+    .class-course--basic {
+      margin-top: 130px;
+    }
+
+    .class-course--basic > .class-work-label {
+      margin-top: 0;
+    }
+
+    .course-empty {
+      margin-top: 42px;
+      padding: 37px 0 39px;
+      color: var(--sub);
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.9;
+    }
+
+    .course-empty span {
+      display: block;
+      margin-top: 7px;
+      font-family: var(--jp);
+      font-size: 11px;
+    }
+
+    @media (max-width: 900px) {
+      .course-nav { gap: 24px; }
+      .course-nav__jp { display: none; }
+      .class-course--basic { margin-top: 110px; }
+    }
+
+    @media (max-width: 640px) {
+      .course-nav { display: block; margin-top: 52px; }
+      .course-nav a { padding: 17px 0; font-size: 9px; }
+      .class-course > .class-work-label { margin-top: 40px; }
+      .class-course--basic { margin-top: 95px; }
+      .class-course--basic > .class-work-label { margin-top: 0; }
+      .course-empty { margin-top: 26px; padding: 25px 0; font-size: 12px; }
+    }
